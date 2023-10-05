@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>third page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        
+        .calendar {
+                   display: grid;
+                   grid-template-columns: repeat(7, 1fr);
+                   gap: 5px;
+               }
+               .bg{
+                 background-image: linear-gradient(to bottom right,#5a1010,#160a6e);
+               }
+               .day {
+                   padding: 3px;
+                   text-align: center;
+                   border: px solid #ccc;
+                   cursor: pointer;
+               }
+               .card{
+                 transform:0.3s ease-in-out;
+                 
+               }
+               .card:hover {
+                 transform:translateY(-5px);
+                 background-color: #ba7bbe;
+               }
+               .day:hover {
+                   background-color: #f799ff;
+               }
+               .back{
+                 background-image: linear-gradient(to bottom right,#be9b7b,#914110);
+               }
+             .slide-bar {
+             height: 3px;
+             width: 100%;
+             background-color: #000000;
+             transform: scaleX(0) ;
+             transform-origin: left;
+             transition: transform 0.3s ease-in-out;
+           }
+           .card:hover .slide-bar {
+             transform: scaleX(1);
+             
+             
+           }
+           .card:hover .icon{
+             transform:scaleX(0);
+           }
+           .card:hover .full{
+             transform:translateY(-30%);
+             
+           }
+           .card:hover .acount{
+             transform:scaleX(1);
+             
+           }
+           .acount{
+             transform: scaleX(0);
+             transform-origin: left;
+             transition: transform 0.3s ease-in-out;
+             height:3px;
+           }
+           hr.line{
+             border: 1px solid grey;
+           }
+           .bg {
+      background-image: linear-gradient(to bottom right, #db8585, #2f0f85);
+      background-image: url('path_to_your_background_image.jpg'), linear-gradient(to bottom right, #123075, #901e73);
+      background-blend-mode: overlay; /* Adjust blending mode as needed */
+    }
+    .back {
+      background-image: linear-gradient(to bottom right, #be7bad, #771091);
+      background-image: url('museum.jpg'), linear-gradient(to bottom right, #be7ba5, #564c79);
+      background-blend-mode: overlay; /* Adjust blending mode as needed */
+    }
+    .museum-heading {
+            color: white;
+            font-family: 'Black Ops One', sans-serif;
+            font-size: 2.5rem;
+        }
+              
+         </style>
+         <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+         </head>
+         <body class="relative bg bg-fixed bg-center bg-cover">
+            <nav class="p-6">
+                <div class="container mx-auto ">
+                  <a href="homepage.html" class="text-white Black Ops One,sans-serif text-5xl my-4 py-4">The Museum</a><br><hr class="line">
+                </div>
+              </nav>
+              
+              <div class="h-screen flex justify-center items-center p-5 ">
+                
+                <div class="absolute top-32 back  rounded-lg h-auto max-w-2xl   p-5">
+                  <h2 class="text-2xl text-white backdrop-blur-60 Ops one text-center mb-10">Date and Slot Selection</h2>
+                  <div class="grid grid-cols sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-2 ">
+                  <div class=" relative  bg-white backdrop-blur-60 mb-12 mx-auto backdrop-blur-md rounded-lg  h-76 w-60 p-5">
+                    <h1 class="text-md font-semibold mb-5 ">Select Date</h1>
+                <div class="mb-2">
+                    <button id="prevMonth" class="mr-1"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg></button>
+                    <span id="currentMonthYear" class="text-md font-semibold"></span>
+                    <button id="nextMonth" class="ml-1"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg></button>
+                </div>
+                <div class="calendar">
+                    <!-- Days will be filled dynamically using JavaScript -->
+                </div><br>
+                <div class="relative bg-gray-400 p-3 flex justify-center font-semibold items-center ">No of Visitors<input type="number" class="rounded-md text-center w-24 "><br></div>
+            
+                  </div>
+                  <div class="  grid grid-cols-2 gap-2">
+                
+                     <div class="bg-white p-4 rounded-md flex flex-col w-auto
+                      justify-center items-center h-32 card">
+                      <div class="full "> <center><svg xmlns="http://www.w3.org/2000/svg" class="icon center" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16"> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/> </svg></center>
+                      <div class="text-md text-center text font-semibold">9 AM to 10 AM</div>
+                       <div class="count text-center p-1">0</div></div><input type="range" min="0" max="30" value="0" class="slide-bar" id="mySlider"><div class="acount text text-center">Availability:30</div>
+                </div>
+            
+                
+                <!-- Students (Other) Card -->
+                <div class="bg-white p-4 rounded-md flex flex-col justify-center items-center h-32 card">
+                  <div class="full "> <center><svg xmlns="http://www.w3.org/2000/svg" class="icon center" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16"> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/> </svg></center>
+                   <div class="text-md  text-center font-semibold">10 AM to 11 AM</div>
+                   <div class="count2 text-center p-1">0</div></div><input type="range" min="0" max="30" value="0" class="slide-bar" id="mySlider2"><div class="acount text text-center">Availability:30</div>
+                </div>
+                
+                <!-- Alumni Card -->
+                <div class="bg-white p-4 rounded-md flex flex-col justify-center items-center h-32 card">
+                  <div class="full "> <center><svg xmlns="http://www.w3.org/2000/svg" class="icon center" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16"> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/> </svg></center>
+                  <div class="text-md text-center font-semibold">11 AM to 12 PM</div>
+                  <div class="count3 text-center p-1">0</div></div><input type="range" min="0" max="30" value="0" class="slide-bar" id="mySlider3"><div class="acount text text-center">Availability:30</div>
+                </div>
+                
+                <!-- Students (AMC) Card -->
+                <div class="bg-white p-4 rounded-md flex flex-col justify-center items-center h-32 card">
+                  <div class="full "> <center><svg xmlns="http://www.w3.org/2000/svg" class="icon center" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16"> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/> </svg></center>
+                  <h3 class="text-md text-center font-semibold">12 AM to 1 PM</h3>
+                  <div class="count4 text-center p-1">0</div></div><input type="range" min="0" max="30" value="0" class="slide-bar" id="mySlider4"><div class="acount text text-center">Availability:30</div>
+                </div>
+                
+                <!-- Faculty Card -->
+                <div class="bg-white p-4 rounded-md flex flex-col justify-center items-center h-32 card">
+                  <div class="full "> <center><svg xmlns="http://www.w3.org/2000/svg" class="icon center" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16"> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/> </svg></center>
+                  <h3 class="text-md text-center font-semibold">1 PM to 2 PM</h3>
+                  <div class="count5 text-center p-1">0</div></div><input type="range" min="0" max="30" value="0" class="slide-bar" id="mySlider5"><div class="acount text text-center">Availability:30</div>
+                </div>
+                
+                <!-- Non-Teaching Staff Card -->
+                <div class="bg-white p-4 rounded-md flex flex-col justify-center items-center h-32 card">
+                  <div class="full "> <center><svg xmlns="http://www.w3.org/2000/svg" class="icon center" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16"> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/> </svg></center> 
+                   <h3 class="text-md text-center font-semibold">2 AM to 3 PM</h3>
+                   <div class="count6 text-center p-1">0</div></div><input type="range" min="0" max="30" value="0" class="slide-bar" id="mySlider6"><div class="acount text text-center">Availability:30</div>
+                </div>
+                <div class="relative  flex justify-center  inset-x-40">
+                   <button type="button" class=" bg-blue-900 px-10 py-2 mt-1 text-white  rounded-md text-black">Pay</button>
+                </div>
+              </div></div>
+                </div>
+                
+              </div>
+              <script>
+              const calendar = document.querySelector('.calendar');
+                    const currentMonthYearElem = document.getElementById('currentMonthYear');
+                    const prevMonthButton = document.getElementById('prevMonth');
+                    const nextMonthButton = document.getElementById('nextMonth');
+                   
+                    let currentDate = new Date();
+                    let currentMonth = currentDate.getMonth();
+                    let currentYear = currentDate.getFullYear();
+                    
+                    
+                    function updateCalendar() {
+                        // Clear existing days
+                        calendar.innerHTML = '';
+                        
+                        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+                        
+                        // Calculate the day of the week for the first day of the month
+                        const firstDayOfWeek = new Date(currentYear, currentMonth, 1).getDay();
+            
+                        // Fill in previous month's days if necessary
+                        for (let i = 0; i < firstDayOfWeek; i++) {
+                            const dayElem = document.createElement('div');
+                            dayElem.classList.add('day', 'text-gray-400');
+                            dayElem.textContent = '';
+                            calendar.appendChild(dayElem);
+                        }
+            
+                        // Fill in the days of the current month
+                        for (let day = 1; day <= daysInMonth; day++) {
+                            const dayElem = document.createElement('div');
+                            dayElem.classList.add('day');
+                            dayElem.textContent = day;
+                            calendar.appendChild(dayElem);
+                        }
+            
+                        currentMonthYearElem.textContent = new Date(currentYear, currentMonth).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+                    }
+            
+                    prevMonthButton.addEventListener('click', () => {
+                        if (currentMonth === 0) {
+                            currentMonth = 11;
+                            currentYear--;
+                        } else {
+                            currentMonth--;
+                        }
+                        updateCalendar();
+                    });
+            
+                    nextMonthButton.addEventListener('click', () => {
+                        if (currentMonth === 11) {
+                            currentMonth = 0;
+                            currentYear++;
+                        } else {
+                            currentMonth++;
+                        }
+                        updateCalendar();
+                    });
+            
+                    updateCalendar();
+            
+              </script>
+                  <script>
+                  
+                    const slider = document.getElementById('mySlider');
+                    const countElement = document.querySelector(".count");
+                    slider.addEventListener("input", () => {
+                    const value =slider.value;
+                    countElement.textContent = value; });
+                       
+                </script>
+                      <script>
+                  
+                    const slider2 = document.getElementById('mySlider2');
+                    const countElement2 = document.querySelector(".count2");
+                    slider2.addEventListener("input", () => {
+                    const value2 =slider2.value;
+                    countElement2.textContent = value2; });
+                       
+                </script>
+                  <script>
+                  
+                    const slider3 = document.getElementById('mySlider3');
+                    const countElement3 = document.querySelector(".count3");
+                    slider3.addEventListener("input", () => {
+                    const value3 =slider3.value;
+                    countElement3.textContent = value3; });
+                       
+                </script>
+                  <script>
+                  
+                    const slider4 = document.getElementById('mySlider4');
+                    const countElement4 = document.querySelector(".count4");
+                    slider4.addEventListener("input", () => {
+                    const value4 =slider4.value;
+                    countElement4.textContent = value4; });
+                       
+                </script>
+                  <script>
+                  
+                    const slider5 = document.getElementById('mySlider5');
+                    const countElement5 = document.querySelector(".count5");
+                    slider5.addEventListener("input", () => {
+                    const value5 =slider5.value;
+                    countElement5.textContent = value5; });
+                       
+                </script>
+                  <script>
+                  
+                    const slider6 = document.getElementById('mySlider6');
+                    const countElement6 = document.querySelector(".count6");
+                    slider6.addEventListener("input", () => {
+                    const value6 =slider6.value;
+                    countElement6.textContent = value6; });
+                       
+                </script>
+            
+            </body> 
+            </html>      

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page in HTML with CSS Code Example</title>
+  <style>
+    body {
+      background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: "Open Sans", sans-serif;
+      color: #333333;
+    }
+
+    .card {
+      margin: 0 auto;
+      width: 80%;
+      background: #FFFFFF;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px 6px #090b6f85;
+      display: flex;
+      flex-direction: row;
+    }
+
+    @media (max-width: 980px) {
+      .card {
+        flex-direction: column;
+      }
+    }
+
+    .left {
+      flex: 1;
+      color: #FFFFFF;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("museum.jpg");
+      overflow: hidden;
+    }
+
+    .left .overlay {
+      padding: 30px;
+      width: 100%;
+      height: 100%;
+      background: #25263fad;
+      overflow: hidden;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .left .overlay h2 {
+      font-size: 5.5vmax;
+      line-height: 1;
+      font-weight: 900;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .left .overlay h4 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .right {
+      flex: 1;
+      padding: 40px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .right h5 {
+      font-size: 5vmax;
+      line-height: 0;
+    }
+
+    .right p {
+      font-size: 14px;
+      color: #B0B3B9;
+    }
+
+    .inputs {
+      overflow: hidden;
+      margin-top: 25px;
+    }
+
+    .inputs input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #B0B3B9;
+      transition: border-bottom-color 0.3s ease-in-out;
+    }
+
+    .inputs input:focus {
+      border-bottom-color: #514fea;
+    }
+
+    .inputs input::placeholder {
+      color: #B0B3B9;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .buttons button {
+      color: #fff;
+      font-size: 16px;
+      padding: 12px 35px;
+      border-radius: 50px;
+      border: 0;
+      outline: 0;
+      box-shadow: 0px 4px 20px 0px #fbd7f5a0;
+      background-image: linear-gradient(135deg, #440bee 10%, #514fea 100%);
+    }
+
+    .button-left {
+      margin-right: 10px;
+    }
+
+    .button-right {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="left">
+    <div class="overlay">
+      <h2>THE MUSEUM</h2>
+      <h4>"Visiting a museum is like taking a walk through the corridors of time."</h4>
+    </div>
+  </div>
+  <div class="right">
+    <h5>User Form</h5>
+    <p>Please provide your details below to access the museum:</p>
+    <div class="inputs">
+      <input type="text" placeholder="Name">
+      <input type="number" placeholder="Phone Number">
+      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Department">
+      <input type="number" placeholder="Roll Number">
+    </div>
+    <div class="buttons">
+      <button class="button-left">Previous</button>
+      <button class="button-right">Next</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
